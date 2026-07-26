@@ -1,0 +1,32 @@
+# Node
+node_modules/
+.next/
+out/
+dist/
+build/
+*.tsbuildinfo
+npm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Env
+.env
+.env.local
+.env.*.local
+.env.staging
+.env.production
+!.env.example
+
+# Editor/OS
+.DS_Store
+.vscode/
+.idea/
+
+# Logs
+*.log
