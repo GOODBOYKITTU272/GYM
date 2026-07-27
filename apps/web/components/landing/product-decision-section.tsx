@@ -85,7 +85,6 @@ export function ProductDecisionSection() {
                     className={cn(
                       "flex items-center gap-2.5 rounded-2xl border px-4 py-3 text-sm font-semibold transition-colors",
                       isActive ? style.active : style.idle,
-                      !isActive && "opacity-55",
                     )}
                   >
                     <Icon name={style.icon} className="size-[18px]" />

@@ -21,17 +21,21 @@ export function WeeklyStorySection() {
             <h3 className="text-sm font-bold uppercase tracking-wide text-nw-muted">
               Your week
             </h3>
-            <dl className="mt-5 flex flex-col gap-4">
+            {/* A plain list, not a <dl>: dt/dd must be direct children of the
+                dl (or of a single wrapping div), and the bar needs a row of
+                its own. Nesting them deeper failed axe's definition-list and
+                dlitem rules. */}
+            <ul className="mt-5 flex flex-col gap-4">
               {WEEKLY_STORY.stats.map((stat) => (
-                <div key={stat.label}>
+                <li key={stat.label}>
                   <div className="flex items-baseline justify-between gap-3">
-                    <dt className="text-sm font-medium text-nw-ink">
+                    <span className="text-sm font-medium text-nw-ink">
                       {stat.label}
-                    </dt>
-                    <dd className="text-sm font-bold tabular-nums text-nw-ink">
+                    </span>
+                    <span className="text-sm font-bold tabular-nums text-nw-ink">
                       {stat.value}
                       {stat.unit}
-                    </dd>
+                    </span>
                   </div>
                   {/* Decorative: the numbers above already carry the value. */}
                   <div
@@ -45,9 +49,9 @@ export function WeeklyStorySection() {
                       }}
                     />
                   </div>
-                </div>
+                </li>
               ))}
-            </dl>
+            </ul>
           </div>
 
           <div className="flex flex-col gap-4">

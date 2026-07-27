@@ -24,7 +24,9 @@ export function ChatBubble({ message }: { message: ChatMessage }) {
           <span
             className={cn(
               "mb-1.5 flex items-center gap-1.5 text-xs font-medium",
-              isUser ? "text-white/80" : "text-nw-muted",
+              // Solid white, not white/80: at small sizes the translucent
+              // version measured below 4.5:1 against the violet bubble.
+              isUser ? "text-white" : "text-nw-muted",
             )}
           >
             <Mic className="size-3.5" aria-hidden="true" strokeWidth={2} />
@@ -42,7 +44,7 @@ export function ChatBubble({ message }: { message: ChatMessage }) {
           <p
             className={cn(
               "mt-1.5 text-xs",
-              isUser ? "text-white/70" : "text-nw-muted",
+              isUser ? "text-white" : "text-nw-muted",
             )}
           >
             {message.meta}

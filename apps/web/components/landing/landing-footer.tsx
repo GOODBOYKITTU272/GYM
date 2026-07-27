@@ -33,7 +33,9 @@ export function LandingFooter() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="inline-flex min-h-11 items-center text-sm text-nw-muted transition-colors hover:text-nw-violet-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nw-violet sm:min-h-0 sm:py-1"
+                    // 44px target kept through tablet widths, which are still
+                    // touch; only relaxed at lg where input is usually a pointer.
+                    className="inline-flex min-h-11 items-center text-sm text-nw-muted transition-colors hover:text-nw-violet-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nw-violet lg:min-h-0 lg:py-1"
                   >
                     {link.label}
                   </a>
